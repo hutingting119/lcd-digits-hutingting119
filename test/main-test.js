@@ -1,13 +1,12 @@
 describe('lcd', function() {
-
     var inputs;
     var loadAllLcd;
-
     beforeEach(function () {
         inputs = 910;
-        loadAllLcd = lcdDigts();
+        loadAllLcd = LCD_Digits();
 
     });
+
     describe('unit testing', function () {
 
         describe('test splitNumbers function', function () {
@@ -20,17 +19,17 @@ describe('lcd', function() {
         describe('test matchLcdDigts function', function () {
             var numbers = [9, 1, 0];
             it('should print correct lcdDigts', function () {
-                var lcdDigts = [['._.', '|_|', '..|'], ['...', '..|', '..|'], ['._.', '|.|', '|_|']];
-                expect(matchLcdDigts(loadAllLcd, numbers)).toEqual(lcdDigts);
+                var lcdDigits = [['._.', '|_|', '..|'], ['...', '..|', '..|'], ['._.', '|.|', '|_|']];
+                expect(matchLcdDigits(loadAllLcd, numbers)).toEqual(lcdDigits);
             });
         });
-        });
+    });
 
     describe('integration testing', function () {
         var loadAllLcd;
         var inputs;
          beforeEach(function () {
-         loadAllLcd = lcdDigts();
+         loadAllLcd = LCD_Digits();
           inputs=910;
          });
         it('should print correct text', function () {
