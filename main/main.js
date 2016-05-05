@@ -1,9 +1,10 @@
 function printReceipt(inputs){
-    var loadAllLcd = lcdDigts();
+    var loadAllLcd = LCD_Digits();
     var numbers=splitNumbers(inputs);
-    var lcdDigits=matchLcdDigts(loadAllLcd,numbers);
+    var lcdDigits=matchLcdDigits(loadAllLcd,numbers);
     toRecept(lcdDigits);
 }
+
 function splitNumbers(inputs) {
     inputs+='';
     var numbers=inputs.split('');
@@ -12,13 +13,15 @@ function splitNumbers(inputs) {
     }
     return numbers;
 }
-function matchLcdDigts(loadAllLcd,numbers) {
-    var lcdDigts=[];
+
+function matchLcdDigits(loadAllLcd,numbers) {
+    var lcdDigits=[];
         for(var i=0;i<numbers.length;i++){
-            lcdDigts.push(loadAllLcd[numbers[i]]);
+            lcdDigits.push(loadAllLcd[numbers[i]]);
         }
-    return lcdDigts;
+    return lcdDigits;
 }
+
 function toRecept(lcdDigits) {
     var output='';
     for(var i=0;i<3;i++){
